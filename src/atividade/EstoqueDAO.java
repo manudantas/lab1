@@ -3,7 +3,7 @@ package atividade;
 import java.util.ArrayList;
 
 public class EstoqueDAO extends Pedido{
-	
+	//nha
 	
 	public boolean inserirProduto(Produto produto, int quantidade, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){

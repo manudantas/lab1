@@ -3,7 +3,7 @@ package atividade;
 public class Produto {
 	public double preco;
 	public String nome;
-	
+	//nha
 	public double getPreco() {
 		return preco;
 	}

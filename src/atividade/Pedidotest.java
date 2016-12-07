@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class Pedidotest {
-
+//nha
 	@Test
 	public void adicionarLinhatest() {
 		fail("Not yet implemented");

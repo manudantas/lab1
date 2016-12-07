@@ -3,7 +3,7 @@ package atividade;
 public class LinhaPedido extends Produto{
 	private Produto produto;
 	private int quantidade;
-	
+	//nha
 	public Produto getProduto() {
 		return produto;
 	}

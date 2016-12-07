@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Pedido {
 
 	ArrayList< LinhaPedido > linhasPedido = new ArrayList< LinhaPedido >();
-	
+	//nha
 	public boolean adicionarLinha(LinhaPedido linha){
 		{	
 			linhasPedido.add(linha);
