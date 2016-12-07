@@ -1,6 +1,6 @@
 package atividade;
 
-public class Produto extends EstoqueDAO {
+public class Produto {
 	public double preco;
 	public String nome;
 	
