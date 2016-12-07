@@ -1,8 +1,15 @@
 package atividade;
 
-public class Produto {
+public class Produto extends EstoqueDAO {
 	public double preco;
-	private String nome;
+	public String nome;
+	
+	public double getPreco() {
+		return preco;
+	}
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 	public String getNome() {
 		return nome;
 	}

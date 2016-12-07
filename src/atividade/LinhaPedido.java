@@ -17,10 +17,20 @@ public class LinhaPedido extends Produto{
 		this.quantidade = quantidade;
 	}
 	
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
 	double totalLinha(){
 		double total = quantidade*preco;
 		return total;
 	}
+
+	
 	
 	
 	
