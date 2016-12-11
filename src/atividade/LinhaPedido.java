@@ -3,7 +3,7 @@ package atividade;
 public class LinhaPedido extends Produto{
 	private Produto produto;
 	private int quantidade;
-	//nha
+
 	public Produto getProduto() {
 		return produto;
 	}
@@ -25,13 +25,18 @@ public class LinhaPedido extends Produto{
 		this.quantidade = quantidade;
 	}
 
-	double totalLinha(){
-		double total = quantidade*preco;
+	double totalLinha(Produto produto, LinhaPedido linha){
+		double total = linha.quantidade*produto.preco;
 		return total;
 	}
-
 	
-	
+	public String mostrarLinha(LinhaPedido linha){
+		String a = linha.getProduto().getNome() +" "+ Integer.toString(linha.getQuantidade());
+		String b = Double.toString(linha.getProduto().getPreco());
+		String c = Double.toString(linha.totalLinha(linha.getProduto(), linha));
+		
+		return a + " " +b+ " " + c;
+	}
 	
 	
 

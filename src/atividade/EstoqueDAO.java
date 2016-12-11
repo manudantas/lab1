@@ -3,20 +3,18 @@ package atividade;
 import java.util.ArrayList;
 
 public class EstoqueDAO extends Pedido{
-	//nha
 	
-	public boolean inserirProduto(Produto produto, int quantidade, ArrayList< LinhaPedido > linhasPedido){
+	public void inserirProduto(Produto produto, int quantidade, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getProduto() == produto){
 				linhas.setQuantidade(linhas.getQuantidade()+ quantidade);
-				return true;
 			}
 		}
-		return false;
 	}
 	
-	public boolean removerProduto(Produto produto, int quantidade){
+	
+	public boolean removerProduto(Produto produto, int quantidade, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getProduto() == produto){
@@ -28,7 +26,7 @@ public class EstoqueDAO extends Pedido{
 		
 	}
 	
-	public void atualizarProduto(Produto prodAntigo, Produto prodNovo){
+	public void atualizarProduto(Produto prodAntigo, Produto prodNovo, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getProduto() == prodAntigo){
@@ -37,11 +35,21 @@ public class EstoqueDAO extends Pedido{
 		}
 	}
 	
-	public Produto procurarPorNome(String nomeproduto){
+	public boolean possuiProduto(Produto produto, ArrayList< LinhaPedido > linhasPedido){
+		for (int i=0;i<linhasPedido.size();i++){
+			LinhaPedido linhas = linhasPedido.get(i);
+			if(linhas.getProduto() == produto){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public String procurarPorNome(String nomeproduto, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getNome().equals(nomeproduto)){
-				return linhas;
+				return linhas.getNome();
 			}
 		}
 		return null;
