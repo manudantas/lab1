@@ -4,13 +4,15 @@ import java.util.ArrayList;
 
 public class EstoqueDAO extends Pedido{
 	
-	public void inserirProduto(Produto produto, int quantidade, ArrayList< LinhaPedido > linhasPedido){
+	public boolean inserirProduto(Produto produto, int quantidade, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getProduto() == produto){
 				linhas.setQuantidade(linhas.getQuantidade()+ quantidade);
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	
@@ -18,21 +20,25 @@ public class EstoqueDAO extends Pedido{
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getProduto() == produto){
-				linhas.setQuantidade(linhas.getQuantidade()-quantidade);
-				return true;
+				if(linhas.getQuantidade() != 0){
+					linhas.setQuantidade(linhas.getQuantidade()-quantidade);
+					return true;
+				}
 			}
 		}
 		return false;
 		
 	}
 	
-	public void atualizarProduto(Produto prodAntigo, Produto prodNovo, ArrayList< LinhaPedido > linhasPedido){
+	public boolean atualizarProduto(Produto prodAntigo, Produto prodNovo, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
 			if(linhas.getProduto() == prodAntigo){
 				linhas.setProduto(prodNovo);
+				return true;
 			}
 		}
+		return false;
 	}
 	
 	public boolean possuiProduto(Produto produto, ArrayList< LinhaPedido > linhasPedido){

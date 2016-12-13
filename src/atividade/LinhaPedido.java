@@ -12,7 +12,7 @@ public class LinhaPedido extends Produto{
 		this.produto = produto;
 	}
 
-	LinhaPedido(Produto produto, int quantidade){
+	public LinhaPedido(Produto produto, int quantidade){
 		this.produto = produto;
 		this.quantidade = quantidade;
 	}
@@ -25,7 +25,7 @@ public class LinhaPedido extends Produto{
 		this.quantidade = quantidade;
 	}
 
-	double totalLinha(Produto produto, LinhaPedido linha){
+	public double totalLinha(Produto produto, LinhaPedido linha){
 		double total = linha.quantidade*produto.preco;
 		return total;
 	}
