@@ -5,10 +5,13 @@ import java.util.ArrayList;
 public class Pedido {
 
 	public boolean adicionarLinha(LinhaPedido linha, ArrayList< LinhaPedido > linhasPedido){
-		{	
+		if(linha.getQuantidade() > 0){	
 			linhasPedido.add(linha);
 			return true;
+		}else{
+			return false;
 		}
+		
 	}
 	
 	public boolean removerLinha(Produto produto, ArrayList< LinhaPedido > linhasPedido){

@@ -54,11 +54,12 @@ public class EstoqueDAO extends Pedido{
 	public String procurarPorNome(String nomeproduto, ArrayList< LinhaPedido > linhasPedido){
 		for (int i=0;i<linhasPedido.size();i++){
 			LinhaPedido linhas = linhasPedido.get(i);
-			if(linhas.getNome().equals(nomeproduto)){
-				return linhas.getNome();
+			String nome = linhas.getProduto().getNome();
+			if(nome.equals(nomeproduto)){
+				return nome;
 			}
 		}
-		return null;
+		return " ";
 	}
 
 

@@ -16,7 +16,7 @@ public class LinhaPedidotest {
 		LinhaPedido linha = new LinhaPedido(produto, 3);
 		produto.nome = "Resma";
 		produto.preco = 2.5;
-		Assert.assertEquals(7.5, linha.totalLinha(produto, linha));
+		Assert.assertEquals(7.5, linha.totalLinha(produto, linha), 0);
 		
 	}
 

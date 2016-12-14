@@ -51,7 +51,7 @@ public class EstoqueDAOtest {
 		ArrayList<LinhaPedido> linhas = new ArrayList<LinhaPedido>();
 		p.adicionarLinha(linha, linhas);
 		
-		//Assert.assertTrue(estoque.atualizarProduto(produto, produto2, linhas));	
+		Assert.assertTrue(estoque.atualizarProduto(produto, produto2, linhas));	
 	}
 	
 	@Test 
@@ -79,8 +79,7 @@ public class EstoqueDAOtest {
 		p.adicionarLinha(linha, linhas);
 		
 		Assert.assertEquals("Resma", estoque.procurarPorNome("Resma", linhas));
-		//Erro no metodo.
-		
+		Assert.assertEquals(" ", estoque.procurarPorNome("lul", linhas));
 	}
 
 }

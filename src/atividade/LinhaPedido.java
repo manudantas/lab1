@@ -13,8 +13,12 @@ public class LinhaPedido extends Produto{
 	}
 
 	public LinhaPedido(Produto produto, int quantidade){
-		this.produto = produto;
-		this.quantidade = quantidade;
+		if(quantidade > 0){
+			this.produto = produto;
+			this.quantidade = quantidade;
+		}else{
+			System.out.println("Nao é possivel criar uma linha sem produto !");
+		}
 	}
 	
 	public int getQuantidade() {
